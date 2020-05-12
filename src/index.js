@@ -7,6 +7,11 @@ import store from "./store";
 import App from "./App";
 import * as serviceWorker from "./serviceWorker";
 
+// Theme.
+import GlobalStyle from "./constants/globalStyles";
+import { ThemeProvider } from "styled-components";
+import { lightTheme } from "./constants/theme";
+
 ReactDOM.render(
   <React.StrictMode>
     <Provider store={store}>
