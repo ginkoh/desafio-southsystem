@@ -4,6 +4,9 @@ import { compose, createStore, applyMiddleware, combineReducers } from "redux";
 // Reducers.
 import initial from "./ducks/initial";
 
+// Store prefix.
+export const STORE_PREFIX = `@@southsystem-challenge`;
+
 const reducers = combineReducers({
   initial,
 });
