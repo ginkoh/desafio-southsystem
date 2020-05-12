@@ -30,6 +30,7 @@ class APIService {
   async updateEntity(entityId, entityInfo) {
     try {
       const entity = await this.apiInstance.put("/" + entityId, ...entityInfo);
+      return entity;
     } catch (err) {}
   }
 
