@@ -1,12 +1,12 @@
 // React.
 import React from "react";
 
-function LoginPage() {
+function EntityList() {
   return (
     <div>
-      <h1>LoginPage</h1>
+      <h1>Entity List</h1>
     </div>
   );
 }
 
-export default LoginPage;
+export default EntityList;
