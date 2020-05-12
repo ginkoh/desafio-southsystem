@@ -4,7 +4,7 @@ import { Switch, Router, Route } from "react-router-dom";
 
 // Routes.
 import { routes } from "./constants/routes";
-import AuthenticatedRoute from "./components/AuthenticatedRoute";
+import CustomRoute from "./components/CustomRoutes";
 import history from "./history";
 
 function AppContainer() {
@@ -14,7 +14,7 @@ function AppContainer() {
         <Switch>
           {routes.map((route, idx) => {
             return (
-              <AuthenticatedRoute
+              <CustomRoute
                 exact={route.exact}
                 key={idx}
                 path={route.path}
