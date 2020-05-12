@@ -32,11 +32,9 @@ export default function reducer(state = initialState, action) {
 }
 
 export const setAuthenticated = makeActionCreator(
-  actionTypes.SET_AUTHENTICATED,
-  { authenticated: true }
+  actionTypes.SET_AUTHENTICATED
 );
 
 export const setUnauthenticated = makeActionCreator(
-  actionTypes.SET_UNAUTHENTICATED,
-  { authenticated: false }
+  actionTypes.SET_UNAUTHENTICATED
 );
