@@ -1,9 +1,10 @@
-import React from 'react';
+import React from "react";
+import EntityList from "./views/EntityList";
 
 function App() {
   return (
     <div className="App">
-      Hello, World!
+      <EntityList />
     </div>
   );
 }
