@@ -26,6 +26,8 @@ export function UnauthenticatedRoute(props) {
 }
 
 function CustomRoute(props) {
+  usePageTitle(props.pageTitle, props.exact ? "" : entityServiceInfo.prefix + 's');
+
   const authentication = useAuthentication();
 
   if (!props.protected || (props.protected && authentication.authenticated)) {
