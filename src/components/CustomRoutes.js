@@ -8,6 +8,7 @@ import usePageTitle from "../hooks/usePageTitle";
 
 // Utils.
 import { entityServiceInfo } from "../constants/services";
+import { Redirect } from "react-router-dom/cjs/react-router-dom";
 
 export function AuthenticatedRoute(props) {
   const authenticatedRouteBehavior = {};
@@ -20,7 +21,7 @@ export function UnauthenticatedRoute(props) {
 
   return (
     <div {...unauthenticatedRouteBehavior}>
-      <h1>You are unable to reach this location :(</h1>;
+      <Redirect to="/login"></Redirect>
     </div>
   );
 }
