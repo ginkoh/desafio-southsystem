@@ -12,7 +12,7 @@ import { entityServiceInfo } from "../constants/services";
 export function AuthenticatedRoute(props) {
   const authenticatedRouteBehavior = {};
 
-  return <Route {...authenticatedRouteBehavior} {...props}></Route>;
+  return <Route {...props} {...authenticatedRouteBehavior}></Route>;
 }
 
 export function UnauthenticatedRoute(props) {
@@ -26,7 +26,10 @@ export function UnauthenticatedRoute(props) {
 }
 
 function CustomRoute(props) {
-  usePageTitle(props.pageTitle, props.exact ? "" : entityServiceInfo.prefix + 's');
+  usePageTitle(
+    props.pageTitle,
+    props.exact || !props.path ? "" : entityServiceInfo.prefix + "s"
+  );
 
   const authentication = useAuthentication();
 
