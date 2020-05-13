@@ -1,12 +1,6 @@
 // Redux.
-import { compose, createStore, combineReducers } from "redux";
-
-// Reducers.
-import authentication from "./ducks/authentication";
-
-const reducers = combineReducers({
-  authentication,
-});
+import { compose, createStore} from "redux";
+import { reducers } from "./ducks/reducers";
 
 // Create store.
 const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;

@@ -4,13 +4,13 @@ import ReactDOM from "react-dom";
 import { Provider } from "react-redux";
 import store from "./store";
 
-import AppContainer from "./AppContainer";
+import AppContainer from "./views/AppContainer";
 import * as serviceWorker from "./serviceWorker";
 
 // Theme.
 import GlobalStyle from "./constants/globalStyles";
-import { ThemeProvider } from "styled-components";
 import { lightTheme } from "./constants/theme";
+import { ThemeProvider } from "styled-components";
 
 ReactDOM.render(
   <React.StrictMode>

@@ -3,9 +3,9 @@ import React, { Fragment } from "react";
 import { Switch, Router } from "react-router-dom";
 
 // Routes.
-import { routes } from "./constants/routes";
-import CustomRoute from "./components/CustomRoutes";
-import history from "./history";
+import { routes } from "../constants/routes";
+import CustomRoute from "../components/CustomRoutes";
+import history from "../utils/history";
 
 function AppContainer() {
   return (
