@@ -42,7 +42,7 @@ const entitiesRoutes = [
     path: `/${routesPrefix}/detail/:entityId`,
     component: EntityDetail,
     protected: true,
-    pageTitle: "Detalhes -",
+    pageTitle: "Detalhes - ",
   },
   {
     path: `/${routesPrefix}/create`,

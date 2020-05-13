@@ -1,6 +1,9 @@
 // Third party.
 import axios from "axios";
 
+// Utils.
+import { entityServiceInfo } from "../constants/services";
+
 class APIService {
   constructor(entityServiceInfo) {
     const { apiUrl, prefix } = entityServiceInfo;
@@ -20,7 +23,7 @@ class APIService {
   async getAllEntities() {
     try {
       const allEntities = await this.apiInstance.get();
-      if (allEntities) return allEntities.data;
+      if (allEntities) return allEntities;
 
       return "Error.";
     } catch (err) {
@@ -41,7 +44,7 @@ class APIService {
   async getEntity(entityId) {
     try {
       const singleEntity = await this.apiInstance.get("/" + entityId);
-      if (singleEntity) return singleEntity.data;
+      if (singleEntity) return singleEntity;
 
       return "Error.";
     } catch (err) {
@@ -112,4 +115,4 @@ class APIService {
   }
 }
 
-export default APIService;
+export default new APIService(entityServiceInfo);
