@@ -129,7 +129,7 @@ function EntityCard(props) {
   const updateEntityByField = useCallback(async (field, targetValue) => {
     const updatedInformation = {
       ...currentEntity,
-      name: targetValue,
+      [field]: field === "histories" ? [targetValue] : targetValue,
     };
 
     const updatedEntity = await APIService.updateEntity(
@@ -140,7 +140,7 @@ function EntityCard(props) {
     if (updatedEntity) {
       setCurrentEntity({
         ...currentEntity,
-        [field]: targetValue,
+        [field]: field === "histories" ? [targetValue] : targetValue,
       });
     } else {
       alert("Um erro ocorreu, tente novamente");
