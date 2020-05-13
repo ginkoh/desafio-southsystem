@@ -1,5 +1,5 @@
 // React.
-import React, { useMemo, useCallback } from "react";
+import React, { useMemo } from "react";
 import { Redirect } from "react-router-dom";
 
 // Hooks.
@@ -47,11 +47,23 @@ function LoginPage() {
   if (authenticated) return <Redirect to="/"></Redirect>;
 
   return (
-    <GenericForm
-      formFields={formFields}
-      initialValues={initialValues}
-      onSubmit={onSubmit}
-    ></GenericForm>
+    <div
+      style={{
+        display: "flex",
+        flexDirection: "column",
+        alignItems: "center",
+        flex: 1,
+      }}
+    >
+      <h1 style={{ color: "purple", marginTop: "50px" }}>FRONT DRAGON</h1>
+      <GenericForm
+        formFields={formFields}
+        initialValues={initialValues}
+        onSubmit={onSubmit}
+        buttonValue="Entrar"
+        style={{ marginTop: "50px" }}
+      ></GenericForm>
+    </div>
   );
 }
 
