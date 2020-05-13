@@ -1,15 +1,10 @@
 // Redux.
-import { compose, createStore, applyMiddleware, combineReducers } from "redux";
+import { compose, createStore, combineReducers } from "redux";
 
 // Reducers.
-import initial from "./ducks/initial";
 import authentication from "./ducks/authentication";
 
-// Store prefix.
-export const STORE_PREFIX = `@@southsystem-challenge`;
-
 const reducers = combineReducers({
-  initial,
   authentication,
 });
 
