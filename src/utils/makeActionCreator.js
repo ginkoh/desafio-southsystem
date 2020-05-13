@@ -7,10 +7,10 @@
  * @returns {Object}
  */
 export default function makeActionCreator(type, payload) {
-  return {
+  return () => ({
     type,
     payload,
-  };
+  });
 }
 
 /**
