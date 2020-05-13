@@ -1,22 +1,61 @@
 // React.
-import React, { Fragment } from "react";
+import React from "react";
 
 // Third party.
 import { useFormik } from "formik";
 
-function GenericForm({ formFields, initialValues, onSubmit }) {
+import styled from "styled-components";
+
+const StyledForm = styled.form`
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+
+  & > button {
+    margin: 5px;
+    margin-left: 15px;
+  }
+`;
+
+const InputContainer = styled.div`
+  display: flex;
+  flex-direction: column;
+  padding: 10px;
+  margin: 5px;
+
+  & > label {
+    margin-bottom: 5px;
+  }
+`;
+
+const StyledInput = styled.input`
+  padding: 7px;
+  border: none;
+  box-shadow: 1px 6px 10px 0px rgba(0, 0, 0, 0.25);
+`;
+
+const StyledSubmitButton = styled.button`
+  border: none;
+  border-radius: 3px;
+  padding: 10px;
+  color: #fff;
+  background: rgba(97,9,121,1);
+  cursor: pointer;
+`;
+
+function GenericForm({ formFields, initialValues, onSubmit, buttonValue, ...rest }) {
   const formik = useFormik({
     initialValues,
     onSubmit,
   });
-  
+
   return (
-    <form onSubmit={formik.handleSubmit}>
+    <StyledForm onSubmit={formik.handleSubmit} {...rest}>
       {formFields.map((field, idx) => {
         return (
-          <Fragment key={idx}>
+          <InputContainer key={idx}>
             <label htmlFor={field.name}>{field.label}</label>
-            <input
+            <StyledInput
               type={field.type}
               id={field.name}
               name={field.name}
@@ -24,11 +63,11 @@ function GenericForm({ formFields, initialValues, onSubmit }) {
               value={formik.values[field.name]}
               {...field.extraProps}
             />
-          </Fragment>
+          </InputContainer>
         );
       })}
-      <button type="submit">Salvar</button>
-    </form>
+      <StyledSubmitButton type="submit">{buttonValue || "Salvar"}</StyledSubmitButton>
+    </StyledForm>
   );
 }
 
