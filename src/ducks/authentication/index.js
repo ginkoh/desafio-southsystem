@@ -1,7 +1,6 @@
+// Utils.
 import makeActionCreator from "../../utils/makeActionCreator";
-// import { STORE_PREFIX } from "../../store";
-
-const STORE_PREFIX = `@@southsystem-challenge`;
+import { STORE_PREFIX } from "../../constants";
 
 const PREFIX = STORE_PREFIX + "/authentication";
 
@@ -32,9 +31,9 @@ export default function reducer(state = initialState, action) {
 }
 
 export const setAuthenticated = makeActionCreator(
-  actionTypes.SET_AUTHENTICATED
+  actionTypes.SET_AUTHENTICATED,
 );
 
 export const setUnauthenticated = makeActionCreator(
-  actionTypes.SET_UNAUTHENTICATED
+  actionTypes.SET_UNAUTHENTICATED,
 );
