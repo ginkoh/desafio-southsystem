@@ -9,13 +9,12 @@ import * as serviceWorker from "./serviceWorker";
 
 // Theme.
 import GlobalStyle from "./constants/globalStyles";
-import { lightTheme } from "./constants/theme";
-import { ThemeProvider } from "styled-components";
 
 ReactDOM.render(
   <React.StrictMode>
     <Provider store={store}>
       <AppContainer />
+      <GlobalStyle />
     </Provider>
   </React.StrictMode>,
   document.getElementById("root")
