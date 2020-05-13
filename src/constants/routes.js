@@ -39,13 +39,13 @@ const entitiesRoutes = [
     pageTitle: "Lista de ",
   },
   {
-    path: `/${routesPrefix}/detail/:entityId"`,
+    path: `/${routesPrefix}/detail/:entityId`,
     component: EntityDetail,
     protected: true,
     pageTitle: "Detalhes -",
   },
   {
-    path: `${routesPrefix}/create`,
+    path: `/${routesPrefix}/create`,
     component: EntityCreation,
     protected: true,
     pageTitle: "Criar ",
