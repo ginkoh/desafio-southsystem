@@ -19,11 +19,7 @@ export function AuthenticatedRoute(props) {
 export function UnauthenticatedRoute(props) {
   const unauthenticatedRouteBehavior = {};
 
-  return (
-    <div {...unauthenticatedRouteBehavior}>
-      <Redirect to="/login"></Redirect>
-    </div>
-  );
+  return <Redirect to="/login"></Redirect>;
 }
 
 function CustomRoute(props) {
