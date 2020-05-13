@@ -10,10 +10,12 @@ function EntityDetail() {
   const { entityId } = useParams();
   const { entity, loading } = useEntitiesInformation(entityId);
 
+  if (loading) return <h1>...</h1>;
+
   return (
     <div>
       <h1>Entity Detail</h1>
-      {loading ? <h1>...</h1> : <EntityCard {...entity}></EntityCard>}
+      <EntityCard {...entity}></EntityCard>
     </div>
   );
 }
