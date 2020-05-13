@@ -34,7 +34,5 @@ export default createGlobalStyle`
         sans-serif;
         -webkit-font-smoothing: antialiased;
         -moz-osx-font-smoothing: grayscale;
-        background: ${({ theme }) => theme.body};
-        color: ${({ theme }) => theme.text};
     }
 `;
