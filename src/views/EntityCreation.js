@@ -1,5 +1,5 @@
 // React.
-import React, { useMemo, useCallback } from "react";
+import React, { useMemo } from "react";
 
 // Components.
 import GenericForm from "../components/GenericForm";
@@ -9,6 +9,14 @@ import APIService from "../services/api";
 
 // Utils.
 import { makeInitialValues } from "../utils/forms";
+import { formattedPrefixName } from "../constants/services";
+
+// Third party.
+import styled from "styled-components";
+
+const EntityCreationContainer = styled.div`
+  margin: 20px;
+`;
 
 function EntityCreation() {
   const formFields = useMemo(
@@ -49,24 +57,34 @@ function EntityCreation() {
     formFields,
   ]);
 
-  const onSubmit = async ({ name, type, histories, imageUrl }) => {
-    const entity = await APIService.createEntity({
-      name,
-      type,
-      histories: [histories],
-      imageUrl,
-    });
+  const onSubmit = async ({ name, type, histories, imageUrl }, handlers) => {
+    if (name && type && imageUrl) {
+      const entity = await APIService.createEntity({
+        name,
+        type,
+        histories: [histories],
+        imageUrl,
+      });
+
+      if (entity) {
+        alert(formattedPrefixName + " criado!");
+      } else {
+        alert("Ocorreu um erro. Tente novamente");
+      }
+    } else {
+      alert("Por favor, preencha todos os campos.");
+    }
   };
 
   return (
-    <div>
-      <h1>EntityCreation</h1>
+    <EntityCreationContainer>
+      <h1>{`${formattedPrefixName} Creation`}</h1>
       <GenericForm
         formFields={formFields}
         initialValues={initialValues}
         onSubmit={onSubmit}
       ></GenericForm>
-    </div>
+    </EntityCreationContainer>
   );
 }
 
