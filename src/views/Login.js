@@ -27,7 +27,7 @@ function LoginPage() {
     []
   );
 
-  const initialValues = useCallback(
+  const initialValues = useMemo(
     () =>
       formFields.reduce((acc, field) => {
         const fieldIsUsername = field.name === "username";

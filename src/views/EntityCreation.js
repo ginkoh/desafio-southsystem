@@ -45,7 +45,7 @@ function EntityCreation() {
     []
   );
 
-  const initialValues = useCallback(() => makeInitialValues(formFields), [
+  const initialValues = useMemo(() => makeInitialValues(formFields), [
     formFields,
   ]);
 
