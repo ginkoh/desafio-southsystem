@@ -15,7 +15,6 @@ function AppContainer() {
           {routes.map((routeProps, idx) => {
             return <CustomRoute {...routeProps} key={idx} />;
           })}
-          }
         </Switch>
       </Fragment>
     </Router>
