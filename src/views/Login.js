@@ -1,5 +1,5 @@
 // React.
-import React, { useMemo } from "react";
+import React, { useMemo, useCallback } from "react";
 import { Redirect } from "react-router-dom";
 
 // Hooks.
@@ -27,7 +27,7 @@ function LoginPage() {
     []
   );
 
-  const initialValues = useMemo(
+  const initialValues = useCallback(
     () =>
       formFields.reduce((acc, field) => {
         const fieldIsUsername = field.name === "username";

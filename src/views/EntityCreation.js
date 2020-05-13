@@ -1,8 +1,11 @@
 // React.
-import React, { useMemo } from "react";
+import React, { useMemo, useCallback } from "react";
 
 // Components.
 import GenericForm from "../components/GenericForm";
+
+// Services.
+import APIService from "../services/api";
 
 // Utils.
 import { makeInitialValues } from "../utils/forms";
@@ -42,11 +45,17 @@ function EntityCreation() {
     []
   );
 
-  const initialValues = useMemo(() => makeInitialValues(formFields), [
+  const initialValues = useCallback(() => makeInitialValues(formFields), [
     formFields,
   ]);
 
   const onSubmit = async ({ name, type, histories, imageUrl }) => {
+    const entity = await APIService.createEntity({
+      name,
+      type,
+      histories: [histories],
+      imageUrl,
+    });
   };
 
   return (
