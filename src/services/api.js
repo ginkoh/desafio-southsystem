@@ -86,7 +86,7 @@ class APIService {
    */
   async updateEntity(entityId, entityInfo) {
     try {
-      const entity = await this.apiInstance.put("/" + entityId, ...entityInfo);
+      const entity = await this.apiInstance.put("/" + entityId, entityInfo);
       if (entity) return entity;
 
       return "Error.";
