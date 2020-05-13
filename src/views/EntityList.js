@@ -9,11 +9,14 @@ function EntityList() {
     elementId: null,
   });
 
-  const fields = useMemo(() => ({
-    name: "Nome",
-    type: "Tipo",
-    createdAt: "Data de criaçao",
-  }));
+  const fields = useMemo(
+    () => ({
+      name: "Nome",
+      type: "Tipo",
+      createdAt: "Data de criaçao",
+    }),
+    []
+  );
 
   if (loading) return <h1>...</h1>;
 
